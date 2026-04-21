@@ -1,0 +1,74 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #faf6f0;
+  --cream-dark: #f0e8dc;
+  --brown: #5c3d2e;
+  --brown-light: #8b6b55;
+  --brown-pale: #d4b896;
+  --terracotta: #c4713a;
+  --terracotta-light: #e8956a;
+  --green: #4a6741;
+  --green-light: #7a9e75;
+  --text: #2a1a0e;
+  --text-muted: #7a6555;
+  --border: #ddd0be;
+  --white: #ffffff;
+  --shadow: 0 2px 12px rgba(92,61,46,0.10);
+  --shadow-lg: 0 8px 32px rgba(92,61,46,0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--text);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--terracotta);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--brown);
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Lora', Georgia, serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='none'/%3E%3Ccircle cx='1' cy='1' r='0.4' fill='%235c3d2e' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+* {
+  position: relative;
+  z-index: 1;
+}
