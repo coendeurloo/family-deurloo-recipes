@@ -26,6 +26,7 @@ export interface Recipe {
   notes: { nl: string; en: string; ru: string }
   tags: string[]
   emoji: string
+  image?: string  // path relative to /public, e.g. '/images/honey-garlic-soy.jpg'
 }
 
 export const recipes: Recipe[] = [
@@ -33,6 +34,7 @@ export const recipes: Recipe[] = [
     id: '1',
     slug: 'honey-garlic-soy',
     emoji: '🍯',
+    image: '/images/honey-garlic-soy.jpg',
     category: { nl: 'Kip', en: 'Chicken', ru: 'Курица' },
     tags: ['kip', 'chicken', 'marinade', 'airfryer'],
     title: {
@@ -108,6 +110,7 @@ export const recipes: Recipe[] = [
     id: '2',
     slug: 'lemon-herb-mediterranean',
     emoji: '🍋',
+    image: '/images/lemon-herb-mediterranean.jpg',
     category: { nl: 'Kip', en: 'Chicken', ru: 'Курица' },
     tags: ['kip', 'chicken', 'marinade', 'airfryer', 'mediterraan', 'mediterranean'],
     title: {
@@ -186,6 +189,7 @@ export const recipes: Recipe[] = [
     id: '3',
     slug: 'shawarma-warm-spices',
     emoji: '🧄',
+    image: '/images/shawarma-warm-spices.jpg',
     category: { nl: 'Kip', en: 'Chicken', ru: 'Курица' },
     tags: ['kip', 'chicken', 'marinade', 'airfryer', 'shawarma', 'midden-oosten', 'middle eastern'],
     title: {
@@ -264,6 +268,7 @@ export const recipes: Recipe[] = [
     id: '4',
     slug: 'smoky-bbq',
     emoji: '🔥',
+    image: '/images/smoky-bbq.jpg',
     category: { nl: 'Kip', en: 'Chicken', ru: 'Курица' },
     tags: ['kip', 'chicken', 'marinade', 'airfryer', 'bbq'],
     title: {

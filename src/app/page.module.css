@@ -125,6 +125,15 @@
 }
 
 /* ── Card ── */
+.cardImage {
+  position: relative;
+  width: calc(100% + 3.2rem);
+  margin: -1.8rem -1.6rem 0.8rem;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+}
+
 .card {
   background: var(--white);
   border: 1px solid var(--border);

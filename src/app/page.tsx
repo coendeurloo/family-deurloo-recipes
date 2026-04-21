@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { recipes } from '@/data/recipes'
 import { t } from '@/lib/i18n'
 import type { Language } from '@/data/recipes'
@@ -69,7 +70,13 @@ export default function Home() {
                 href={`/recipe/${recipe.slug}?lang=${lang}`}
                 className={styles.card}
               >
-                <div className={styles.cardEmoji}>{recipe.emoji}</div>
+                {recipe.image ? (
+                  <div className={styles.cardImage}>
+                    <Image src={recipe.image} alt={recipe.title[lang]} fill style={{ objectFit: 'cover' }} sizes="(max-width: 600px) 100vw, 400px" />
+                  </div>
+                ) : (
+                  <div className={styles.cardEmoji}>{recipe.emoji}</div>
+                )}
                 <div className={styles.cardCategory}>{recipe.category[lang]}</div>
                 <h2 className={styles.cardTitle}>{recipe.title[lang]}</h2>
                 <p className={styles.cardDesc}>{recipe.description[lang]}</p>

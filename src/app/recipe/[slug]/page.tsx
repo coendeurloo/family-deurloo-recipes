@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { recipes } from '@/data/recipes'
 import { t, translateUnit } from '@/lib/i18n'
 import type { Language } from '@/data/recipes'
@@ -70,7 +71,13 @@ export default function RecipePage() {
       <main className={styles.main}>
         {/* Hero */}
         <div className={styles.hero}>
-          <span className={styles.heroEmoji}>{recipe.emoji}</span>
+          {recipe.image ? (
+            <div className={styles.heroImage}>
+              <Image src={recipe.image} alt={recipe.title[lang]} fill style={{ objectFit: 'cover' }} sizes="100vw" priority />
+            </div>
+          ) : (
+            <span className={styles.heroEmoji}>{recipe.emoji}</span>
+          )}
           <p className={styles.heroCategory}>{recipe.category[lang]}</p>
           <h1 className={styles.heroTitle}>{recipe.title[lang]}</h1>
           <p className={styles.heroDesc}>{recipe.description[lang]}</p>
