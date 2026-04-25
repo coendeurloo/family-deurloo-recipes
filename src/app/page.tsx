@@ -39,8 +39,10 @@ export default function Home() {
                 key={l}
                 onClick={() => setLang(l)}
                 className={`${styles.langBtn} ${lang === l ? styles.langBtnActive : ''}`}
+                aria-label={`Switch to ${l}`}
+                title={l.toUpperCase()}
               >
-                {l === 'nl' ? '🇳🇱 NL' : l === 'en' ? '🇬🇧 EN' : '🇷🇺 RU'}
+                {l === 'nl' ? '🇳🇱' : l === 'en' ? '🇬🇧' : '🇷🇺'}
               </button>
             ))}
           </div>
