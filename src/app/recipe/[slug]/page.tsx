@@ -143,6 +143,21 @@ export default function RecipePage() {
                   <div className={styles.stepContent}>
                     <h3 className={styles.stepTitle}>{step.title[lang]}</h3>
                     <p className={styles.stepDesc}>{step.description[lang]}</p>
+                    {step.images && step.images.length > 0 && (
+                      <div className={styles.stepImages}>
+                        {step.images.map((image, imageIndex) => (
+                          <div key={image} className={styles.stepImage}>
+                            <Image
+                              src={image}
+                              alt={`${step.title[lang]} ${imageIndex + 1}`}
+                              fill
+                              style={{ objectFit: 'cover' }}
+                              sizes="(max-width: 600px) 100vw, 760px"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </li>
               ))}

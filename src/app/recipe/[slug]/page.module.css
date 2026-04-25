@@ -314,6 +314,23 @@
   line-height: 1.65;
 }
 
+.stepImages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+}
+
+.stepImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.65 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+}
+
 /* ── Notes box ── */
 .notesBox {
   background: var(--cream-dark);
@@ -365,5 +382,11 @@
   }
   .section {
     padding: 1.3rem 1.2rem;
+  }
+  .stepItem {
+    gap: 0.8rem;
+  }
+  .stepImages {
+    grid-template-columns: 1fr;
   }
 }

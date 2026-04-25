@@ -9,6 +9,7 @@ export interface Ingredient {
 export interface Step {
   title: { nl: string; en: string; ru: string }
   description: { nl: string; en: string; ru: string }
+  images?: string[]
 }
 
 export interface Recipe {
@@ -340,6 +341,115 @@ export const recipes: Recipe[] = [
       nl: 'Door het suikergehalte kan dit snel aanbranden in de airfryer. Houd het in de gaten! Perfect voor de koelkastporties die je binnen 2–3 dagen wilt gebruiken.',
       en: 'Because of the sugar content, keep an eye on it in the air fryer — it can catch quickly. Great for the fridge portions you plan to use within 2–3 days.',
       ru: 'Из-за содержания сахара следите за блюдом в аэрогриле — оно может быстро пригореть. Отлично подходит для порций в холодильнике, которые вы планируете использовать в течение 2–3 дней.',
+    },
+  },
+  {
+    id: '5',
+    slug: 'carbonara',
+    emoji: '🍝',
+    image: 'https://www.recipetineats.com/tachyon/2023/01/Carbonara_3.jpg',
+    category: { nl: 'Pasta', en: 'Pasta', ru: 'Паста' },
+    tags: ['pasta', 'carbonara', 'italiaans', 'italian', 'spaghetti'],
+    title: {
+      nl: 'Carbonara',
+      en: 'Carbonara',
+      ru: 'Карбонара',
+    },
+    description: {
+      nl: 'Klassieke carbonara zonder room: eieren, kaas, guanciale of spek en pastawater vormen samen een romige saus.',
+      en: 'Classic carbonara without cream: eggs, cheese, guanciale or bacon and pasta water turn into a silky sauce.',
+      ru: 'Классическая карбонара без сливок: яйца, сыр, гуанчале или бекон и вода от пасты превращаются в кремовый соус.',
+    },
+    servings: 4,
+    prepTime: 5,
+    cookTime: 15,
+    equipment: [
+      { nl: 'Grote kookpan', en: 'Large pot', ru: 'Большая кастрюля' },
+      { nl: 'Koekenpan', en: 'Frying pan', ru: 'Сковорода' },
+      { nl: 'Grote mengkom', en: 'Large mixing bowl', ru: 'Большая миска' },
+      { nl: 'Rasp', en: 'Grater', ru: 'Тёрка' },
+      { nl: 'Tang of houten lepel', en: 'Tongs or wooden spoon', ru: 'Щипцы или деревянная ложка' },
+    ],
+    ingredients: [
+      { amount: 400, unit: 'g', name: { nl: 'spaghetti', en: 'spaghetti', ru: 'спагетти' } },
+      { amount: 175, unit: 'g', name: { nl: 'guanciale, pancetta of spek', en: 'guanciale, pancetta or bacon', ru: 'гуанчале, панчетта или бекон' } },
+      { amount: 2, unit: null, name: { nl: 'grote eieren', en: 'large eggs', ru: 'крупных яйца' } },
+      { amount: 2, unit: null, name: { nl: 'eidooiers', en: 'egg yolks', ru: 'яичных желтка' } },
+      { amount: 100, unit: 'g', name: { nl: 'Parmigiano Reggiano of Pecorino, fijn geraspt', en: 'Parmigiano Reggiano or Pecorino, finely grated', ru: 'Пармиджано Реджано или Пекорино, мелко натёртый' } },
+      { amount: 0.25, unit: 'tl', name: { nl: 'zwarte peper', en: 'black pepper', ru: 'чёрный перец' } },
+      { amount: 1, unit: 'el', name: { nl: 'zout voor het pastawater', en: 'salt for the pasta water', ru: 'соль для воды для пасты' } },
+      { amount: 125, unit: 'ml', name: { nl: 'pastawater, bewaard na het koken', en: 'reserved pasta cooking water', ru: 'вода от варки пасты' } },
+      { amount: 1, unit: null, name: { nl: 'teentje knoflook, fijngehakt (optioneel)', en: 'garlic clove, finely minced (optional)', ru: 'зубчик чеснока, мелко нарезанный (по желанию)' } },
+    ],
+    steps: [
+      {
+        title: { nl: 'Spek snijden', en: 'Cut the pork', ru: 'Нарезать мясо' },
+        description: {
+          nl: 'Snijd de guanciale, pancetta of spek in dikke reepjes zodat ze straks goudbruin bakken en nog beet houden.',
+          en: 'Cut the guanciale, pancetta or bacon into chunky batons so they brown well and keep some bite.',
+          ru: 'Нарежьте гуанчале, панчетту или бекон толстыми брусочками, чтобы они хорошо подрумянились.',
+        },
+        images: ['https://www.recipetineats.com/tachyon/2023/01/How-to-make-Carbonara-1c.jpg'],
+      },
+      {
+        title: { nl: 'Kaas raspen', en: 'Grate the cheese', ru: 'Натереть сыр' },
+        description: {
+          nl: 'Rasp de kaas zo fijn mogelijk. Gebruik liever geen voorgeraspte kaas, want die smelt minder mooi in de saus.',
+          en: 'Grate the cheese as finely as possible. Avoid pre-grated cheese because it does not melt as smoothly.',
+          ru: 'Натрите сыр как можно мельче. Готовый тёртый сыр лучше не использовать: он хуже плавится.',
+        },
+        images: ['https://www.recipetineats.com/tachyon/2023/01/How-to-make-Carbonara-1a.jpg'],
+      },
+      {
+        title: { nl: 'Saus mengen', en: 'Mix the sauce', ru: 'Смешать соус' },
+        description: {
+          nl: 'Klop de eieren en eidooiers los in een grote kom. Meng de geraspte kaas en zwarte peper erdoor.',
+          en: 'Whisk the eggs and yolks in a large bowl. Stir in the grated cheese and black pepper.',
+          ru: 'В большой миске взбейте яйца и желтки. Добавьте тёртый сыр и чёрный перец.',
+        },
+        images: ['https://www.recipetineats.com/tachyon/2023/01/How-to-make-Carbonara-1b.jpg'],
+      },
+      {
+        title: { nl: 'Pasta koken', en: 'Cook the pasta', ru: 'Сварить пасту' },
+        description: {
+          nl: 'Kook de spaghetti in ruim gezouten water volgens de verpakking. Schep vlak voor het afgieten minimaal 125 ml pastawater apart.',
+          en: 'Cook the spaghetti in plenty of salted water according to the packet. Reserve at least 125 ml pasta water before draining.',
+          ru: 'Сварите спагетти в хорошо подсоленной воде по инструкции. Перед сливом сохраните минимум 125 мл воды.',
+        },
+        images: ['https://www.recipetineats.com/tachyon/2023/01/How-to-make-Carbonara-2d.jpg'],
+      },
+      {
+        title: { nl: 'Spek bakken', en: 'Cook the pork', ru: 'Обжарить мясо' },
+        description: {
+          nl: 'Bak de reepjes in een droge koekenpan op middelhoog vuur tot ze goudbruin zijn. Voeg knoflook alleen de laatste minuut toe.',
+          en: 'Cook the batons in a dry frying pan over medium-high heat until golden. Add garlic only during the final minute.',
+          ru: 'Обжарьте брусочки на сухой сковороде до золотистого цвета. Чеснок добавляйте только в последнюю минуту.',
+        },
+        images: ['https://www.recipetineats.com/tachyon/2023/01/How-to-make-Carbonara-2a.jpg'],
+      },
+      {
+        title: { nl: 'Pasta met vet mengen', en: 'Coat the pasta', ru: 'Смешать пасту с жиром' },
+        description: {
+          nl: 'Doe de hete spaghetti in de pan en meng kort met het uitgebakken vet. Schep daarna alles in de kom met ei-kaas-saus.',
+          en: 'Toss the hot spaghetti in the pan with the rendered fat, then transfer everything into the bowl with the egg-cheese sauce.',
+          ru: 'Перемешайте горячую пасту с вытопившимся жиром, затем переложите всё в миску с яично-сырным соусом.',
+        },
+        images: ['https://www.recipetineats.com/tachyon/2023/01/How-to-make-Carbonara-2b.jpg'],
+      },
+      {
+        title: { nl: 'Romig roeren en serveren', en: 'Stir creamy and serve', ru: 'Перемешать до кремовой текстуры' },
+        description: {
+          nl: 'Voeg 125 ml pastawater toe en roer stevig 30 tot 60 seconden, van het vuur af, tot de saus glanst en aan de pasta hangt. Serveer direct.',
+          en: 'Add 125 ml pasta water and stir vigorously off the heat for 30 to 60 seconds until the sauce turns glossy and clings to the pasta. Serve immediately.',
+          ru: 'Добавьте 125 мл воды от пасты и энергично перемешивайте вне огня 30-60 секунд, пока соус не станет глянцевым. Подавайте сразу.',
+        },
+        images: ['https://www.recipetineats.com/tachyon/2023/01/How-to-make-Carbonara-2c.jpg'],
+      },
+    ],
+    notes: {
+      nl: 'Belangrijk: meng de ei-kaas-saus van het vuur af, anders krijg je roerei. Warm de borden alvast op; carbonara is het lekkerst direct uit de kom.',
+      en: 'Important: mix the egg-cheese sauce off the heat or it can scramble. Warm the bowls first; carbonara is best served immediately.',
+      ru: 'Важно: смешивайте яично-сырный соус вне огня, иначе яйца свернутся. Подавайте сразу, лучше в тёплых тарелках.',
     },
   },
 ]
