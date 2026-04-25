@@ -47,9 +47,14 @@
   background: transparent;
   border: 1.5px solid var(--brown-pale);
   color: var(--brown-pale);
-  padding: 0.25rem 0.6rem;
-  border-radius: 2rem;
+  width: 2.15rem;
+  height: 2.15rem;
+  padding: 0;
+  border-radius: 50%;
   font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.15s;
 }
 
@@ -60,6 +65,15 @@
 .langBtnActive {
   background: var(--terracotta);
   border-color: var(--terracotta);
+}
+
+.flagIcon {
+  width: 1.35rem;
+  height: 0.95rem;
+  display: block;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.35);
 }
 
 /* ── Main ── */

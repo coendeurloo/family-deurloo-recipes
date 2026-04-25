@@ -64,6 +64,15 @@
   transition: all 0.2s;
 }
 
+.flagIcon {
+  width: 1.35rem;
+  height: 0.95rem;
+  display: block;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.35);
+}
+
 .langBtn:hover {
   background: var(--brown-light);
   color: var(--cream);
@@ -105,6 +114,36 @@
 .searchInput::placeholder {
   color: var(--text-muted);
   font-style: italic;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 760px;
+  margin: 0.9rem auto 0;
+}
+
+.filterBtn {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--brown-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.84rem;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.filterBtn:hover {
+  border-color: var(--brown-pale);
+  color: var(--brown);
+}
+
+.filterBtnActive {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
 }
 
 /* ── Main ── */

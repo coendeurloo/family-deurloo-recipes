@@ -61,7 +61,11 @@ export default function RecipePage() {
                 onClick={() => switchLang(l)}
                 className={`${styles.langBtn} ${lang === l ? styles.langBtnActive : ''}`}
               >
-                {l === 'nl' ? '🇳🇱' : l === 'en' ? '🇬🇧' : '🇷🇺'}
+                <img
+                  src={`/flags/${l === 'en' ? 'gb' : l}.svg`}
+                  alt={l.toUpperCase()}
+                  className={styles.flagIcon}
+                />
               </button>
             ))}
           </div>

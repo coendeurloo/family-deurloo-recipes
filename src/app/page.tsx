@@ -11,14 +11,27 @@ import styles from './page.module.css'
 export default function Home() {
   const [lang, setLang] = useState<Language>('nl')
   const [search, setSearch] = useState('')
+  const [activeFilter, setActiveFilter] = useState('all')
   const ui = t(lang)
+  const filters = [
+    { id: 'all', label: ui.allRecipes, match: () => true },
+    { id: 'kip', label: lang === 'en' ? 'Chicken' : lang === 'ru' ? 'Курица' : 'Kip', match: (r: typeof recipes[number]) => r.tags.includes('kip') || r.tags.includes('chicken') },
+    { id: 'pasta', label: 'Pasta', match: (r: typeof recipes[number]) => r.tags.includes('pasta') },
+    { id: 'marinade', label: 'Marinade', match: (r: typeof recipes[number]) => r.tags.includes('marinade') },
+    { id: 'airfryer', label: 'Airfryer', match: (r: typeof recipes[number]) => r.tags.includes('airfryer') },
+    { id: 'italian', label: lang === 'ru' ? 'Итальянское' : lang === 'en' ? 'Italian' : 'Italiaans', match: (r: typeof recipes[number]) => r.tags.includes('italian') || r.tags.includes('italiaans') },
+  ]
 
   const filtered = recipes.filter(r => {
     const q = search.toLowerCase()
+    const filter = filters.find(item => item.id === activeFilter)
     return (
-      r.title[lang].toLowerCase().includes(q) ||
-      r.description[lang].toLowerCase().includes(q) ||
-      r.tags.some(tag => tag.toLowerCase().includes(q))
+      (!filter || filter.match(r)) &&
+      (
+        r.title[lang].toLowerCase().includes(q) ||
+        r.description[lang].toLowerCase().includes(q) ||
+        r.tags.some(tag => tag.toLowerCase().includes(q))
+      )
     )
   })
 
@@ -42,7 +55,11 @@ export default function Home() {
                 aria-label={`Switch to ${l}`}
                 title={l.toUpperCase()}
               >
-                {l === 'nl' ? '🇳🇱' : l === 'en' ? '🇬🇧' : '🇷🇺'}
+                <img
+                  src={`/flags/${l === 'en' ? 'gb' : l}.svg`}
+                  alt={l.toUpperCase()}
+                  className={styles.flagIcon}
+                />
               </button>
             ))}
           </div>
@@ -58,6 +75,18 @@ export default function Home() {
           onChange={e => setSearch(e.target.value)}
           className={styles.searchInput}
         />
+        <div className={styles.filterBar}>
+          {filters.map(filter => (
+            <button
+              key={filter.id}
+              type="button"
+              onClick={() => setActiveFilter(filter.id)}
+              className={`${styles.filterBtn} ${activeFilter === filter.id ? styles.filterBtnActive : ''}`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Recipe grid */}
