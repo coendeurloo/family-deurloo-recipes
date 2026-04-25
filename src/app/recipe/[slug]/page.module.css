@@ -18,7 +18,7 @@
 }
 
 .headerInner {
-  max-width: 860px;
+  max-width: 1120px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -139,6 +139,49 @@
   line-height: 1.65;
 }
 
+.recipeActions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.actionBtn,
+.primaryBtn,
+.secondaryBtn {
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.86rem;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.actionBtn,
+.secondaryBtn {
+  background: var(--white);
+  color: var(--brown-light);
+}
+
+.actionBtn:hover,
+.secondaryBtn:hover {
+  border-color: var(--brown-pale);
+  color: var(--brown);
+}
+
+.actionBtnActive,
+.primaryBtn {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
+}
+
+.primaryBtn:disabled,
+.secondaryBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 /* ── Meta row ── */
 .metaRow {
   display: flex;
@@ -207,9 +250,24 @@
 
 /* ── Body ── */
 .body {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.sideColumn {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.2rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.mainColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /* ── Sections ── */
@@ -255,9 +313,6 @@
 }
 
 .ingredItem {
-  display: flex;
-  align-items: baseline;
-  gap: 0.8rem;
   padding: 0.55rem 0;
   border-bottom: 1px dashed var(--border);
 }
@@ -270,7 +325,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 600;
   color: var(--terracotta);
-  min-width: 80px;
+  min-width: 78px;
   text-align: right;
   flex-shrink: 0;
 }
@@ -280,12 +335,58 @@
   font-size: 0.95rem;
 }
 
+.ingredItem label {
+  display: grid;
+  grid-template-columns: 1.15rem 78px 1fr;
+  align-items: baseline;
+  gap: 0.7rem;
+  cursor: pointer;
+}
+
+.ingredItem input {
+  accent-color: var(--terracotta);
+  transform: translateY(0.1rem);
+}
+
+.ingredItemChecked .ingredName,
+.ingredItemChecked .ingredAmount {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.clearChecksBtn {
+  margin-top: 0.9rem;
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  color: var(--brown-light);
+  border-radius: 2rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+}
+
 /* ── Steps ── */
 .stepList {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
+}
+
+.stepsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.stepProgress {
+  color: var(--terracotta);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+}
+
+.stepListSingle {
+  gap: 0;
 }
 
 .stepItem {
@@ -345,6 +446,13 @@
   border: 1px solid var(--border);
 }
 
+.stepControls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
 /* ── Notes box ── */
 .notesBox {
   background: var(--cream-dark);
@@ -379,7 +487,126 @@
   font-size: 0.9rem;
 }
 
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(42,26,14,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.shoppingPanel {
+  width: min(620px, 100%);
+  max-height: 86vh;
+  overflow: auto;
+  background: var(--white);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 1.3rem;
+}
+
+.panelHeader,
+.panelActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.panelHeader h2 {
+  color: var(--brown);
+  font-size: 1.25rem;
+}
+
+.closeBtn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--cream-dark);
+  color: var(--brown);
+  font-size: 1.2rem;
+}
+
+.printArea {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+.printArea h3 {
+  color: var(--brown);
+  margin-bottom: 0.6rem;
+}
+
+.shoppingList {
+  list-style: none;
+}
+
+.shoppingList li {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+}
+
+.shoppingList li span {
+  min-width: 4.5rem;
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+.cookMode .header,
+.cookMode .footer {
+  display: none;
+}
+
+.cookMode .main {
+  max-width: 1220px;
+  padding-top: 1rem;
+}
+
+.cookMode .hero {
+  padding: 1rem 0 1.25rem;
+  margin-bottom: 1.3rem;
+}
+
+.cookMode .heroImage {
+  height: 200px;
+  margin-top: 0;
+}
+
+.cookMode .heroDesc {
+  display: none;
+}
+
+.cookMode .section {
+  padding: 1.4rem;
+}
+
+.cookMode .stepTitle {
+  font-size: 1.35rem;
+}
+
+.cookMode .stepDesc,
+.cookMode .ingredName {
+  font-size: 1.08rem;
+}
+
 /* ── Responsive ── */
+@media (max-width: 900px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+  .sideColumn {
+    position: static;
+  }
+}
+
 @media (max-width: 600px) {
   .metaRow {
     flex-wrap: wrap;
@@ -397,10 +624,54 @@
   .section {
     padding: 1.3rem 1.2rem;
   }
+  .ingredItem label {
+    grid-template-columns: 1rem 62px 1fr;
+    gap: 0.55rem;
+  }
   .stepItem {
     gap: 0.8rem;
   }
   .stepImages {
     grid-template-columns: 1fr;
+  }
+  .stepControls {
+    justify-content: stretch;
+  }
+  .stepControls button {
+    flex: 1;
+  }
+}
+
+@media print {
+  .header,
+  .heroImage,
+  .recipeActions,
+  .footer,
+  .modalBackdrop,
+  .clearChecksBtn {
+    display: none !important;
+  }
+  .page,
+  .main {
+    background: #fff;
+    padding: 0;
+  }
+  .hero {
+    padding: 0 0 1rem;
+    margin-bottom: 1rem;
+  }
+  .body {
+    display: block;
+  }
+  .sideColumn,
+  .mainColumn {
+    position: static;
+    display: block;
+  }
+  .section,
+  .notesBox {
+    box-shadow: none;
+    break-inside: avoid;
+    margin-bottom: 1rem;
   }
 }

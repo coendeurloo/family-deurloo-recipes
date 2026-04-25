@@ -146,6 +146,44 @@
   color: var(--white);
 }
 
+.shoppingToolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0.8rem auto 0;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+.shoppingBtn,
+.primaryBtn,
+.secondaryBtn {
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.shoppingBtn,
+.primaryBtn {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
+}
+
+.shoppingBtn:disabled {
+  background: var(--cream-dark);
+  border-color: var(--border);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.secondaryBtn {
+  background: var(--white);
+  color: var(--brown-light);
+}
+
 /* ── Main ── */
 .main {
   flex: 1;
@@ -183,11 +221,6 @@
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 4px;
-  padding: 1.8rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  text-decoration: none;
   color: var(--text);
   box-shadow: var(--shadow);
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -215,6 +248,79 @@
 
 .card:hover::before {
   transform: scaleX(1);
+}
+
+.cardLink {
+  padding: 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 100%;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.cardActions {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 4;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.iconBtn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.92);
+  color: var(--brown-light);
+  box-shadow: var(--shadow);
+}
+
+.iconBtnActive {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
+}
+
+.cardCheck input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cardCheck span {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.92);
+  box-shadow: var(--shadow);
+  display: block;
+  position: relative;
+}
+
+.cardCheck span::after {
+  content: '';
+  position: absolute;
+  left: 0.63rem;
+  top: 0.42rem;
+  width: 0.42rem;
+  height: 0.78rem;
+  border: solid var(--brown-light);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.cardCheck input:checked + span {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.cardCheck input:checked + span::after {
+  border-color: var(--white);
 }
 
 .cardEmoji {
@@ -263,4 +369,105 @@
   color: var(--text-muted);
   border-top: 1px solid var(--border);
   font-style: italic;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(42,26,14,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.shoppingPanel {
+  width: min(720px, 100%);
+  max-height: 86vh;
+  overflow: auto;
+  background: var(--white);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 1.3rem;
+}
+
+.panelHeader,
+.panelActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.panelHeader h2 {
+  color: var(--brown);
+  font-size: 1.25rem;
+}
+
+.closeBtn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--cream-dark);
+  color: var(--brown);
+  font-size: 1.2rem;
+}
+
+.shoppingRecipe {
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.shoppingRecipe h3 {
+  color: var(--brown);
+  margin-bottom: 0.45rem;
+}
+
+.shoppingRecipe ul {
+  list-style: none;
+}
+
+.shoppingRecipe li {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+}
+
+.shoppingRecipe li span {
+  min-width: 4.5rem;
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .shoppingToolbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media print {
+  .header,
+  .searchBar,
+  .main,
+  .footer,
+  .panelHeader,
+  .panelActions {
+    display: none !important;
+  }
+  .modalBackdrop {
+    position: static;
+    display: block;
+    background: transparent;
+    padding: 0;
+  }
+  .shoppingPanel {
+    box-shadow: none;
+    border: 0;
+    max-height: none;
+    width: 100%;
+  }
 }
