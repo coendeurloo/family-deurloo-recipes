@@ -452,6 +452,97 @@ export const recipes: Recipe[] = [
       ru: 'Важно: смешивайте яично-сырный соус вне огня, иначе яйца свернутся. Подавайте сразу, лучше в тёплых тарелках.',
     },
   },
+  {
+    id: '6',
+    slug: 'smoky-bbq-kip-crunchy-aardappel-komkommersalade',
+    emoji: '🍗',
+    image: '/images/bbqkipaardappeltjeskomkommer.png',
+    category: { nl: 'Kip', en: 'Chicken', ru: 'Курица' },
+    tags: ['kip', 'chicken', 'bbq', 'oven', 'airfryer', 'aardappel', 'salade', 'kindvriendelijk'],
+    title: {
+      nl: 'Smoky BBQ kip met crunchy aardappelblokjes en frisse komkommersalade',
+      en: 'Smoky BBQ chicken with crunchy potato cubes and cucumber salad',
+      ru: 'Курица Smoky BBQ с хрустящим картофелем и свежим огуречным салатом',
+    },
+    description: {
+      nl: 'Een complete, milde maaltijd met gekaramelliseerde BBQ-kip uit de oven, krokante aardappelblokjes uit de airfryer en een frisse komkommersalade.',
+      en: 'A complete mild family meal with caramelized BBQ chicken from the oven, crispy air-fryer potato cubes, and a fresh cucumber salad.',
+      ru: 'Полноценный мягкий семейный ужин: карамелизированная BBQ-курица из духовки, хрустящий картофель из аэрогриля и свежий огуречный салат.',
+    },
+    servings: 3,
+    prepTime: 15,
+    cookTime: 20,
+    equipment: [
+      { nl: 'Oven', en: 'Oven', ru: 'Духовка' },
+      { nl: 'Airfryer', en: 'Air fryer', ru: 'Аэрогриль' },
+      { nl: 'Bakplaat of rooster', en: 'Baking tray or rack', ru: 'Противень или решётка' },
+      { nl: 'Mengkommen', en: 'Mixing bowls', ru: 'Миски' },
+      { nl: 'Snijplank en mes', en: 'Cutting board and knife', ru: 'Разделочная доска и нож' },
+    ],
+    ingredients: [
+      { amount: 375, unit: 'g', name: { nl: 'kipfilet of kippendij, in stukjes van ±4×3 cm', en: 'chicken breast or thigh, cut into pieces about 4×3 cm', ru: 'куриное филе или бедро, кусочками примерно 4×3 см' } },
+      { amount: 1, unit: null, name: { nl: 'portie Smoky BBQ marinade, naar verhouding van het basisrecept', en: 'portion Smoky BBQ marinade, scaled from the base recipe', ru: 'порция маринада Smoky BBQ, пропорционально базовому рецепту' } },
+      { amount: 350, unit: 'g', name: { nl: 'voorgegaarde aardappelblokjes', en: 'pre-cooked potato cubes', ru: 'предварительно отваренные картофельные кубики' } },
+      { amount: 1, unit: 'el', name: { nl: 'zonnebloemolie', en: 'sunflower oil', ru: 'подсолнечное масло' } },
+      { amount: 0.5, unit: 'tl', name: { nl: 'gerookt paprikapoeder', en: 'smoked paprika', ru: 'копчёная паприка' } },
+      { amount: 0.25, unit: 'tl', name: { nl: 'knoflookpoeder', en: 'garlic powder', ru: 'чесночный порошок' } },
+      { amount: 0.5, unit: 'tl', name: { nl: 'maïzena, optioneel voor extra crunch', en: 'cornstarch, optional for extra crunch', ru: 'кукурузный крахмал, по желанию для хруста' } },
+      { amount: 1, unit: null, name: { nl: 'komkommer, in dunne plakjes', en: 'cucumber, thinly sliced', ru: 'огурец, тонко нарезанный' } },
+      { amount: 0.5, unit: null, name: { nl: 'rode ui, dun gesneden', en: 'red onion, thinly sliced', ru: 'красная луковица, тонко нарезанная' } },
+      { amount: 1, unit: 'el', name: { nl: 'witte wijnazijn of appelciderazijn', en: 'white wine vinegar or apple cider vinegar', ru: 'белый винный уксус или яблочный уксус' } },
+      { amount: 0.5, unit: 'tl', name: { nl: 'honing of suiker', en: 'honey or sugar', ru: 'мёд или сахар' } },
+      { amount: 1, unit: 'el', name: { nl: 'olijfolie', en: 'olive oil', ru: 'оливковое масло' } },
+      { amount: 1, unit: null, name: { nl: 'snuf zout en zwarte peper', en: 'pinch salt and black pepper', ru: 'щепотка соли и чёрного перца' } },
+      { amount: 1, unit: null, name: { nl: 'handje verse dille of peterselie, optioneel', en: 'small handful fresh dill or parsley, optional', ru: 'небольшая горсть свежего укропа или петрушки, по желанию' } },
+    ],
+    steps: [
+      {
+        title: { nl: 'Kip marineren', en: 'Marinate the chicken', ru: 'Замариновать курицу' },
+        description: {
+          nl: 'Meng de kip met de Smoky BBQ marinade. Laat minimaal 30 minuten marineren.',
+          en: 'Mix the chicken with the Smoky BBQ marinade. Leave to marinate for at least 30 minutes.',
+          ru: 'Смешайте курицу с маринадом Smoky BBQ. Оставьте мариноваться минимум на 30 минут.',
+        },
+      },
+      {
+        title: { nl: 'Komkommersalade maken', en: 'Make the cucumber salad', ru: 'Приготовить огуречный салат' },
+        description: {
+          nl: 'Meng azijn, honing, olijfolie, zout en peper. Voeg komkommer en rode ui toe en laat 10-15 minuten intrekken in de koelkast.',
+          en: 'Mix vinegar, honey, olive oil, salt, and pepper. Add cucumber and red onion, then chill for 10-15 minutes.',
+          ru: 'Смешайте уксус, мёд, оливковое масло, соль и перец. Добавьте огурец и красный лук, затем охладите 10-15 минут.',
+        },
+      },
+      {
+        title: { nl: 'Kip bakken in de oven', en: 'Bake the chicken', ru: 'Запечь курицу' },
+        description: {
+          nl: 'Verwarm de oven voor op 220°C hete lucht. Leg de kipstukjes op een bakplaat of rooster, bak 15-18 minuten en schep halverwege om. Laat 2 minuten rusten.',
+          en: 'Preheat the fan oven to 220°C. Arrange the chicken on a baking tray or rack, bake for 15-18 minutes, and turn halfway. Rest for 2 minutes.',
+          ru: 'Разогрейте духовку с конвекцией до 220°C. Разложите курицу на противне или решётке, запекайте 15-18 минут, перевернув в середине. Дайте отдохнуть 2 минуты.',
+        },
+      },
+      {
+        title: { nl: 'Crunchy aardappels bakken', en: 'Cook the crunchy potatoes', ru: 'Приготовить хрустящий картофель' },
+        description: {
+          nl: 'Dep de aardappels droog. Meng met maïzena, olie, gerookt paprikapoeder, knoflookpoeder, zout en peper. Bak in de airfryer op 200°C gedurende 10-12 minuten en schud halverwege om tot ze goudbruin en krokant zijn.',
+          en: 'Pat the potatoes dry. Toss with cornstarch, oil, smoked paprika, garlic powder, salt, and pepper. Air fry at 200°C for 10-12 minutes, shaking halfway, until golden and crisp.',
+          ru: 'Обсушите картофель. Смешайте с крахмалом, маслом, копчёной паприкой, чесночным порошком, солью и перцем. Готовьте в аэрогриле при 200°C 10-12 минут, встряхнув в середине, до золотистого хруста.',
+        },
+      },
+      {
+        title: { nl: 'Serveren', en: 'Serve', ru: 'Подать' },
+        description: {
+          nl: 'Serveer de kip warm met de aardappelblokjes. Geef de komkommersalade er koud naast voor een fris contrast.',
+          en: 'Serve the chicken warm with the potato cubes. Add the chilled cucumber salad on the side for a fresh contrast.',
+          ru: 'Подавайте курицу тёплой с картофелем. Охлаждённый огуречный салат подайте рядом для свежего контраста.',
+        },
+      },
+    ],
+    notes: {
+      nl: 'Zonnebloemolie werkt het beste voor crunch. Laat niet te veel marinade aan de kip zitten voor betere karamellisatie. Alles is mild van smaak en geschikt voor kinderen.',
+      en: 'Sunflower oil gives the best crunch. Do not leave too much marinade clinging to the chicken if you want better caramelization. Mild and kid-friendly.',
+      ru: 'Подсолнечное масло лучше всего помогает получить хруст. Для лучшей карамелизации не оставляйте на курице слишком много маринада. Вкус мягкий и подходит детям.',
+    },
+  },
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
