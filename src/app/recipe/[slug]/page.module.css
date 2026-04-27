@@ -646,35 +646,157 @@
 }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 6mm;
+  }
+
   .header,
   .heroImage,
+  .heroCategory,
+  .heroDesc,
   .recipeActions,
   .footer,
   .modalBackdrop,
-  .clearChecksBtn {
+  .clearChecksBtn,
+  .sideColumn .section:first-child,
+  .notesBox {
     display: none !important;
   }
+
+  .page,
+  .page * {
+    color: #1f160f !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
   .page,
   .main {
     background: #fff;
+    font-size: 7.7pt;
+    line-height: 1.2;
     padding: 0;
+    max-width: none;
+    min-height: 0;
   }
+
   .hero {
-    padding: 0 0 1rem;
-    margin-bottom: 1rem;
+    border-bottom: 1px solid #d8cab8;
+    margin: 0 0 2mm;
+    padding: 0 0 2mm;
   }
+
+  .heroTitle {
+    font-size: 14pt;
+    line-height: 1.05;
+    margin: 0 0 1.8mm;
+  }
+
+  .metaRow {
+    border: 1px solid #d8cab8;
+    background: #fff;
+  }
+
+  .metaItem {
+    padding: 1.3mm 6mm;
+    gap: 0;
+  }
+
+  .metaLabel {
+    font-size: 6pt;
+    letter-spacing: 0.08em;
+  }
+
+  .metaValue {
+    font-size: 9pt;
+  }
+
+  .servBtn {
+    display: none;
+  }
+
   .body {
-    display: block;
+    display: grid;
+    grid-template-columns: 39% 1fr;
+    gap: 4mm;
+    align-items: start;
   }
+
   .sideColumn,
   .mainColumn {
     position: static;
-    display: block;
+    display: flex;
+    gap: 3mm;
   }
+
   .section,
   .notesBox {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
     box-shadow: none;
+    break-inside: auto;
+    margin: 0;
+  }
+
+  .sectionTitle {
+    border-bottom: 1px solid #d8cab8;
+    font-size: 8.5pt;
+    margin-bottom: 1.5mm;
+    padding-bottom: 0.8mm;
+  }
+
+  .ingredItem {
+    padding: 0.85mm 0;
+  }
+
+  .ingredItem label {
+    grid-template-columns: 17mm 1fr;
+    gap: 2mm;
+  }
+
+  .ingredItem input {
+    display: none;
+  }
+
+  .ingredAmount {
+    min-width: 0;
+    font-size: 7pt;
+  }
+
+  .ingredName,
+  .stepDesc,
+  .notesText {
+    font-size: 7.4pt;
+  }
+
+  .stepList {
+    gap: 1.7mm;
+  }
+
+  .stepItem {
+    gap: 2.5mm;
     break-inside: avoid;
-    margin-bottom: 1rem;
+  }
+
+  .stepNumber {
+    width: auto;
+    height: auto;
+    min-width: 4mm;
+    margin-top: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #7a3f1f !important;
+    font-size: 7.4pt;
+  }
+
+  .stepTitle {
+    font-size: 7.8pt;
+    margin-bottom: 0.25mm;
+  }
+
+  .stepDesc {
+    line-height: 1.22;
   }
 }
